@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Text Summarizer</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 40px;
+                text-align: center;
+            }
+
+            textarea {
+                width: 80%;
+                height: 200px;
+                margin-bottom: 20px;
+            }
+
+            button {
+                padding: auto;
+                font-size: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Text Summarizer</h1>
+        <form action="/summarize" , method="post">
+            <label for="inputText">Enter your text: </label><br><br>
+            <textarea id="inputText" name="inputText"></textarea><br>
+            <button type="submit">Summarize</button>
+        </form>
+        <% if (summary) { %>
+            <h2>Summary: </h2>
+            <p>
+                <%= summary %>
+            </p>
+            <%} %>
+    </body>
+
+</html>
