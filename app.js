@@ -4,7 +4,7 @@ const axios = require('axios')
 
 const app = express()
 
-const HUGGINGFACE_API_KEY = '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'
+const HUGGINGFACE_API_KEY = process.env.HUGGINGFACE_API_KEY
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
@@ -30,6 +30,10 @@ app.post('/summarize', async (req, res) => {
     }
 })
 
+
+
+
+module.exports = app
 // app.listen(3000, () => {
 //     console.log('Server is activated')
 // })
