@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const axios = require('axios')
+const path = require('path')
 
 const app = express()
 
@@ -8,6 +9,8 @@ const HUGGINGFACE_API_KEY = process.env.HUGGINGFACE_API_KEY
 
 app.use(bodyParser.urlencoded({ extended: true }))
 app.set('view engine', 'ejs')
+
+app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', (req, res) => {
     res.render('home', { summary: 'none' })
